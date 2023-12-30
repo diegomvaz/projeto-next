@@ -34,7 +34,7 @@ function Login() {
   return (
     <Center h={'100vh'}>
       <Card>
-        <Heading size='lg' textAlign={'center'}>Catálogo de Filmes</Heading>
+        <Heading size='lg' paddingTop={10} textAlign={'center'}>Catálogo de Filmes</Heading>
         <FormControl padding={10} width={'350px'}>
           <FormLabel>Usuário</FormLabel>
           <Input type='email' onChange={e => setUsuario({ ...usuario, nome: e.target.value })} />
