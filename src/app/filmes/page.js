@@ -1,17 +1,17 @@
 import { ChakraProvider, RadioGroup, Stack, Radio, Flex } from '@chakra-ui/react'
 import * as React from 'react'
 import { getFilmesPopulares, getFilmesMaiorNota } from '../infra/filmes'
-import Galeria from '../components/galeria'
+import Filmes from '../components/filmes'
 // import { useState } from 'react';
 
 
-export default async function Filmes() {
+export default async function Page() {
   const maiorNota = await getFilmesMaiorNota()
-  const populares = await getFilmesMaiorNota()
+  const populares = await getFilmesPopulares()
   
   return (
     <ChakraProvider>
-      <Galeria data={{maiorNota, populares}} />
+      <Filmes data={{maiorNota, populares}} />
     </ChakraProvider>
   )
 }
