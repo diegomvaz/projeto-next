@@ -1,18 +1,18 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
- 
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const petName = searchParams.get('petName');
-  const ownerName = searchParams.get('ownerName');
- 
+  const usuario = searchParams.get('usuario');
+  const senha = searchParams.get('senha');
+
   try {
-    if (!petName || !ownerName) throw new Error('Pet and owner names required');
-    await sql`INSERT INTO Pets (Name, Owner) VALUES (${petName}, ${ownerName});`;
+    if (!usuario || !senha) throw new Error('Usuário e senha obrigatórios');
+    await sql`INSERT INTO usuarios (Name, Pass) VALUES (${usuario}, ${senha}) ON CONFLICT DO NOTHING;`;
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }
  
-  const pets = await sql`SELECT * FROM Pets;`;
-  return NextResponse.json({ pets }, { status: 200 });
+  const usuarios = await sql`SELECT Name FROM usuarios;`;
+  return NextResponse.json({ usuarios }, { status: 200 });
 }
