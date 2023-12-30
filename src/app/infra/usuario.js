@@ -21,7 +21,7 @@ export async function verificarUsuario(usuario) {
       const resultado = await bcrypt.compare(usuario.senha, busca.rows[0].pass)
       return resultado
     } catch (error) {
-      return 'erro'
+      return false
     }
   } else return false
 }
