@@ -13,7 +13,6 @@ export const authOptions = {
                 const parsedCredentials = z
                     .object({ nome: z.string() , senha: z.string() })
                     .safeParse(credentials);
-                console.log(parsedCredentials)
                 if (parsedCredentials.success) {
                     const verificar = await verificarUsuario({ nome: credentials.nome, senha: credentials.senha });
                     return verificar ? true : false;
