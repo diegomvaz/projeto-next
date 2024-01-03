@@ -6,10 +6,10 @@ import * as React from 'react'
 
 function Galeria({ data }) {
     return <>
-        <Flex flexWrap={'wrap'} justifyContent={'center'}>
+        <Flex flexWrap={'wrap'} justifyContent={'center'} gap={10} paddingTop={5} paddingBottom={10}>
             {data['results'].map(filme => {
                 return <>
-                    <Card padding={10} width={'400px'}>
+                    <Card padding={5} width={'400px'}>
                         <Heading size='md'>{filme.original_title}</Heading>
                         <Text paddingTop={2}>Release Date: {filme.release_date}</Text>
                         <Text>⭐{filme.vote_average}</Text>
