@@ -1,6 +1,7 @@
 'use server'
 
 export async function getFilmesPopulares() {
+    console.log('consultado API filmes populares')
     const headers = { 
         accept: 'application/json',    
         Authorization: 'Bearer '+ process.env.MOVIE_API_TOKEN
@@ -17,6 +18,7 @@ export async function getFilmesPopulares() {
 
 
 export async function getFilmesMaiorNota() {
+    console.log('consultado API filmes com maior nota')
     const headers = { 
         accept: 'application/json',    
         Authorization: 'Bearer '+ process.env.MOVIE_API_TOKEN

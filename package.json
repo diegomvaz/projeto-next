@@ -16,9 +16,11 @@
     "bcrypt": "^5.1.1",
     "framer-motion": "^10.16.16",
     "next": "14.0.4",
+    "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
-    "vercel": "^33.0.1"
+    "vercel": "^33.0.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/react": "18.2.46",

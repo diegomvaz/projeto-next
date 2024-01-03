@@ -2,11 +2,13 @@
 import { sql } from '@vercel/postgres';
 import bcrypt from 'bcrypt';
 
+
 export async function criarUsuario(usuario) {
   if (usuario.nome != '' && usuario.senha != '') {
     const hashedPass = await bcrypt.hash(usuario.senha, 10);
     try {
-      await sql`INSERT INTO usuarios (Name, Pass) VALUES (${usuario.nome}, ${hashedPass}) ON CONFLICT DO NOTHING;`;
+      await sql`INSERT INTO usuarios (Name, Pass) VALUES (${usuario.nome}, ${hashedPass}) 
+              ON CONFLICT (Name) DO UPDATE SET Pass = EXCLUDED.Pass;`;
       return 'Usuário criado com sucesso!'
     } catch (error) {
       return error

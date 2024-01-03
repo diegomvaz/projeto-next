@@ -1,5 +1,4 @@
 
-'use client'
 import { Card, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import * as React from 'react'
 
