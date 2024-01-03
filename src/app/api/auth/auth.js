@@ -9,7 +9,6 @@ export const authOptions = {
     providers: [
         Credentials({
             async authorize(credentials) {
-                console.log('aqui')
                 const parsedCredentials = z
                     .object({ nome: z.string() , senha: z.string() })
                     .safeParse(credentials);

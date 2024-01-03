@@ -49,7 +49,7 @@ function Login() {
         <Heading size='lg' paddingTop={10} textAlign={'center'}>Catálogo de Filmes</Heading>
         <FormControl padding={10} width={'350px'}>
           <FormLabel>Usuário</FormLabel>
-          <Input id='email' type='email' onChange={e => setUsuario({ ...usuario, nome: e.target.value })} />
+          <Input id='nome' type='text' onChange={e => setUsuario({ ...usuario, nome: e.target.value })} />
           <FormLabel paddingTop={10}>Senha</FormLabel>
           <Input id='pass' type='password' onChange={e => setUsuario({ ...usuario, senha: e.target.value })} />
           <Box marginTop={5}>
